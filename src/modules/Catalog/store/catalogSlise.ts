@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { IProductArray } from 'interfaces/IProductArray.interface';
 
-const initialState = {
-  products: [],
+const initialState: IProductArray = {
+  items: [],
 };
 
 export const catalogSlise = createSlice({
@@ -9,13 +10,13 @@ export const catalogSlise = createSlice({
   initialState,
   reducers: {
     loadCatalog: (state, action) => {
-      state.products = action.payload;
+      state.items = action.payload;
     },
   },
 });
 
 export const { loadCatalog } = catalogSlise.actions;
 
-export const getCatalogProducts = (state: any) => state.products.products;
+export const getCatalogProducts = (state: any) => state.products.items;
 
 export default catalogSlise.reducer;
