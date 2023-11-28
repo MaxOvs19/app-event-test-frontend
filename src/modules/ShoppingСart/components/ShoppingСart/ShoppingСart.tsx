@@ -6,45 +6,50 @@ import { IProduct } from 'interfaces/IProduct.interface';
 
 import './shoppingСart.scss';
 import ItemBasket from '../ItemBasket/ItemBasket';
+import Order from '../Order/Order';
 
 const ShoppingСart = () => {
-  const basket = useSelector(getShoppingСartItems);
+  const basket: Array<IProduct> = useSelector(getShoppingСartItems);
   let totalPrice = 0;
-  console.log(basket);
 
   return (
     <div className="shopping-cart">
-      <div className="shopping-cart__basket">
-        <table>
-          <thead>
-            <tr>
-              <th>Products</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Array.isArray(basket) &&
-              basket.map((item: IProduct, index) => {
-                totalPrice += item.price;
-                return (
-                  <ItemBasket
-                    id={item.id}
-                    image={item.image}
-                    name={item.name}
-                    price={item.price}
-                    key={item.id}
-                  />
-                );
-              })}
-          </tbody>
-        </table>
+      {basket && basket.length === 0 ? (
+        ''
+      ) : (
+        <div className="shopping-cart__basket">
+          <table>
+            <thead>
+              <tr>
+                <th>Products</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {basket &&
+                basket.map((item: IProduct, index) => {
+                  totalPrice += item.price;
+                  return (
+                    <ItemBasket
+                      id={item.id}
+                      image={item.image}
+                      name={item.name}
+                      price={item.price}
+                      key={item.id}
+                    />
+                  );
+                })}
+            </tbody>
+          </table>
+          <Order />
+        </div>
+      )}
 
-        {Array.isArray(basket) && basket.length === 0 && (
-          <div className="selected-products__basket-empty">
-            <p>Корзина пуста :(</p>
-          </div>
-        )}
-      </div>
+      {basket && basket.length === 0 && (
+        <div className="shopping-cart__empty">
+          <p>Cart is empty :(</p>
+        </div>
+      )}
     </div>
   );
 };

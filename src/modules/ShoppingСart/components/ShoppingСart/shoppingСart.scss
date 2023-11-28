@@ -2,5 +2,31 @@
   margin-top: 180px;
 
   &__basket {
+    display: flex;
+    flex-direction: row;
+
+    table {
+      border-spacing: 0 11px;
+      width: 782px;
+
+      thead {
+        text-align: left;
+        font-size: 18px;
+      }
+
+      tbody {
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.775);
+    border-radius: 8px;
+    height: 110px;
+    font-size: 18px;
   }
 }
