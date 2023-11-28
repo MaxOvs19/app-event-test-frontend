@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { IProductArray } from 'interfaces/IProductArray.interface';
 import { getProduct } from 'modules/Catalog/api/fetchGetProducts';
 import { loadCatalog } from 'modules/Catalog/store/catalogSlise';
-import ProductCard from '../ProductCard/ProductCard';
+import ProductCard from '../../../../components/ProductCard/ProductCard';
 
 import advertising from 'assets/images/advertising.png';
 
