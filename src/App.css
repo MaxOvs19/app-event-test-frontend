@@ -14,3 +14,7 @@
   position: relative;
   margin: 0 auto;
 }
+
+body {
+  background-color: #f3f1f5;
+}

@@ -8,6 +8,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background-color: #f3f1f5;
+  z-index: 10;
   border-bottom: 1px solid rgba(0, 0, 0, 0.37);
 
   &-profile {
@@ -38,6 +40,7 @@
 
       &:hover {
         font-weight: 700;
+        color: #3d0876;
         transition: ease-out 0.2s;
       }
     }

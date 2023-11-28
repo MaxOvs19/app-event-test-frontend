@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './BaseButton.scss';
 interface IProps {
   children: any;
   styles?: string;

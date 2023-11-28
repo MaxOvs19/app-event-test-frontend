@@ -1,8 +1,14 @@
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 import { IProductArray } from 'interfaces/IProductArray.interface';
 import { getProduct } from 'modules/Catalog/api/fetchGetProducts';
-import { getCatalogProducts, loadCatalog } from 'modules/Catalog/store/catalogSlise';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { loadCatalog } from 'modules/Catalog/store/catalogSlise';
+import ProductCard from '../ProductCard/ProductCard';
+
+import advertising from 'assets/images/advertising.png';
+
+import './catalog.scss';
 
 const Catalog = () => {
   const [dataCatalog, setDataCatalog] = useState<IProductArray>();
@@ -18,7 +24,24 @@ const Catalog = () => {
     dispatch(loadCatalog(dataCatalog?.items));
   }, [dataCatalog]);
 
-  return <div></div>;
+  return (
+    <div className="catalog">
+      <img src={advertising} alt="@" className="catalog__advertising" />
+      {dataCatalog?.items.length
+        ? dataCatalog.items.map((item) => {
+            return (
+              <ProductCard
+                id={item.id}
+                name={item.name}
+                image={item.image}
+                price={item.price}
+                key={item.id}
+              />
+            );
+          })
+        : 'Loading...'}
+    </div>
+  );
 };
 
 export default Catalog;

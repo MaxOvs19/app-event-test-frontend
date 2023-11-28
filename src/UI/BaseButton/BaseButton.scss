@@ -1,2 +1,15 @@
 .base-button {
+  border: none;
+  border-radius: 8px;
+  background-color: #3d0876;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    transition: 0.4s;
+    background-color: #3d0876bc;
+  }
 }

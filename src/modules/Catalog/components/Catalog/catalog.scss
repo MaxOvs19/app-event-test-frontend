@@ -1,0 +1,13 @@
+.catalog {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 55.5px;
+
+  &__advertising {
+    max-width: 1197px;
+    border-radius: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.496);
+  }
+}
