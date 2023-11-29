@@ -28,4 +28,33 @@
     height: 110px;
     font-size: 18px;
   }
+
+  @media (max-width: 1200px) {
+    &__basket {
+      align-items: center;
+
+      table {
+        width: 90%;
+      }
+    }
+
+    &__empty {
+      margin-top: 100px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    margin-top: 90px;
+  }
+
+  @media (max-width: 425px) {
+    width: 90%;
+    margin: 0 auto;
+
+    &__basket {
+      table {
+        width: 100%;
+      }
+    }
+  }
 }

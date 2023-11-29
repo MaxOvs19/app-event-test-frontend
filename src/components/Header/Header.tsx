@@ -27,11 +27,32 @@ const Header = () => {
       <img src={logo} alt="@" className="header__logo" />
 
       <nav className={menuState ? 'header__nav menu-active' : 'header__nav'}>
-        <Link to={'/'}>Catalog</Link>
+        <Link
+          to={'/'}
+          onClick={() => {
+            setMenuState(false);
+          }}
+        >
+          Catalog
+        </Link>
 
-        <Link to={'/'}>Blogs</Link>
+        <Link
+          to={'/'}
+          onClick={() => {
+            setMenuState(false);
+          }}
+        >
+          Blogs
+        </Link>
 
-        <Link to={'/'}>About Us</Link>
+        <Link
+          to={'/'}
+          onClick={() => {
+            setMenuState(false);
+          }}
+        >
+          About Us
+        </Link>
 
         <p
           className="menu-close"

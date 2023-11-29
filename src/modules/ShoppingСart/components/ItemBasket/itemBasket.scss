@@ -45,4 +45,64 @@
       }
     }
   }
+
+  @media (max-width: 580px) {
+    height: 80px;
+
+    &__decs {
+      height: 80px;
+
+      img {
+      }
+
+      p {
+      }
+    }
+
+    &__price {
+      height: 80px;
+      div {
+        gap: 11px;
+
+        p {
+          font-size: 15px;
+        }
+
+        img {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    &__decs {
+      column-gap: 10px;
+
+      img {
+        width: 50px;
+        padding: 10px;
+      }
+
+      p {
+        margin-right: 5px;
+        font-size: 12px;
+        width: auto;
+      }
+    }
+
+    &__price {
+      width: 100px;
+      div {
+        p {
+          font-size: 12px;
+        }
+
+        img {
+          width: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }

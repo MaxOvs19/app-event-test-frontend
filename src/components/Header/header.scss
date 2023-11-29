@@ -44,15 +44,14 @@
     &__menu {
       transition: 0.5s;
       display: none;
-
-      &-close {
-        display: none;
-      }
     }
   }
 
   &__logo {
     max-height: 100%;
+  }
+  .menu-close {
+    display: none;
   }
 
   &__nav {
@@ -104,9 +103,14 @@
     }
 
     &-profile {
+      padding-right: 25px;
       &__menu {
         display: block;
       }
+    }
+
+    &__logo {
+      max-height: 70%;
     }
 
     .menu-close {
