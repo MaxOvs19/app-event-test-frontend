@@ -28,7 +28,6 @@ const Catalog = (catalog: IProductArray) => {
                 name={item.name}
                 image={item.image}
                 price={item.price}
-                cardKey={item.id}
                 key={index}
               />
             );

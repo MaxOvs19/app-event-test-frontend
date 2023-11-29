@@ -13,11 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 import './productCard.scss';
 
-interface IProps extends IProduct {
-  cardKey: number;
-}
-
-const ProductCard = (item: IProps) => {
+const ProductCard = (item: IProduct) => {
   const [buttonText, setButtonText] = useState<string>('Add to Basket');
   const [buttonStatus, setButtonStatus] = useState(false);
   const dispatch = useDispatch();
@@ -57,7 +53,7 @@ const ProductCard = (item: IProps) => {
   }, []);
 
   return (
-    <div className="product-card" key={item.id}>
+    <div className="product-card">
       <img src={item.image} alt="@" className="product-card__image" />
       <div className="product-card__desc">
         <h2>{item.name}</h2>
