@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useSelector } from 'react-redux';
-import { getShoppingСartItems } from 'modules/ShoppingСart/store/shoppingСartSlise';
+import { useDispatch, useSelector } from 'react-redux';
+import { getShoppingСartItems, loadBacket } from 'modules/ShoppingСart/store/shoppingСartSlise';
 import { IProduct } from 'interfaces/IProduct.interface';
 
 import './shoppingСart.scss';
@@ -9,7 +9,12 @@ import ItemBasket from 'modules/ShoppingСart/components/ItemBasket/ItemBasket';
 import Order from 'modules/ShoppingСart/components/Order/Order';
 
 const ShoppingСart = () => {
+  const dispatch = useDispatch();
   const basket: Array<IProduct> = useSelector(getShoppingСartItems);
+
+  useEffect(() => {
+    dispatch(loadBacket());
+  }, []);
 
   let totalPrice = 0;
 

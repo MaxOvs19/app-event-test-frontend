@@ -13,7 +13,11 @@ import { useNavigate } from 'react-router-dom';
 
 import './productCard.scss';
 
-const ProductCard = (item: IProduct) => {
+interface IProps extends IProduct {
+  cardKey: number;
+}
+
+const ProductCard = (item: IProps) => {
   const [buttonText, setButtonText] = useState<string>('Add to Basket');
   const [buttonStatus, setButtonStatus] = useState(false);
   const dispatch = useDispatch();

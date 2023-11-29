@@ -21,7 +21,7 @@ const ItemBasket = ({ id, image, name, price }: IProduct) => {
   }
 
   return (
-    <tr className="item-basket">
+    <tr className="item-basket" key={id}>
       <td>
         <div className="item-basket__decs">
           <img src={image} alt="@" />
