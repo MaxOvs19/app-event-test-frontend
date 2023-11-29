@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import { getShoppingСartItems } from 'modules/ShoppingСart/store/shoppingСartSlise';
+import { IProduct } from 'interfaces/IProduct.interface';
 
 import logo from 'assets/images/logo.png';
 import user from 'assets/icons/userAvatar.svg';
-import basket from 'assets/icons/shoppingCart.svg';
+import basketIcon from 'assets/icons/shoppingCart.svg';
+
 import './header.scss';
-import { Link } from 'react-router-dom';
-import BaseButton from 'UI/BaseButton/BaseButton';
 
 const Header = () => {
+  const basket: Array<IProduct> = useSelector(getShoppingСartItems);
+  const [basketArr, setBasketArr] = useState(basket);
+
+  useEffect(() => {
+    setBasketArr(basket);
+  }, [basket]);
+
   return (
     <header className="header">
       <img src={logo} alt="@" className="header__logo" />
@@ -22,11 +34,14 @@ const Header = () => {
 
       <div className="header-profile">
         <img src={user} alt="@" />
-        <Link to={'/basket'}>
-          <img src={basket} alt="@" />
+        <Link to={'/basket'} className="header-profile__basket">
+          <img src={basketIcon} alt="@" />
+          {basketArr.length > 0 ? (
+            <span className="header-profile__basket_counter">{basketArr.length}</span>
+          ) : (
+            ''
+          )}
         </Link>
-
-        <BaseButton>Place an order</BaseButton>
       </div>
     </header>
   );

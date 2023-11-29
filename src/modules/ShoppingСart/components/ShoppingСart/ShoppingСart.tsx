@@ -5,11 +5,12 @@ import { getShoppingСartItems } from 'modules/ShoppingСart/store/shoppingСart
 import { IProduct } from 'interfaces/IProduct.interface';
 
 import './shoppingСart.scss';
-import ItemBasket from '../ItemBasket/ItemBasket';
-import Order from '../Order/Order';
+import ItemBasket from 'modules/ShoppingСart/components/ItemBasket/ItemBasket';
+import Order from 'modules/ShoppingСart/components/Order/Order';
 
 const ShoppingСart = () => {
   const basket: Array<IProduct> = useSelector(getShoppingСartItems);
+
   let totalPrice = 0;
 
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { IProductArray } from 'interfaces/IProductArray.interface';
-import ProductCard from '../../../../components/ProductCard/ProductCard';
+import ProductCard from 'components/ProductCard/ProductCard';
 
 import advertising from 'assets/images/advertising.png';
 

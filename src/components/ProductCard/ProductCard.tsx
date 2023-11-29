@@ -39,7 +39,7 @@ const ProductCard = (item: IProduct) => {
         timer: 2000,
       });
       setButtonStatus(true);
-      setButtonText('Checkout');
+      setButtonText('Place an order');
     }
   }
 
@@ -47,7 +47,7 @@ const ProductCard = (item: IProduct) => {
     basket.find((elem) => {
       if (elem.id === item.id) {
         setButtonStatus(true);
-        setButtonText('Checkout');
+        setButtonText('Place an order');
       }
     });
   }, []);

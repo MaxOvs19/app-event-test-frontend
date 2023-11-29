@@ -21,6 +21,25 @@
       height: 22px;
       cursor: pointer;
     }
+
+    &__basket {
+      position: relative;
+
+      &_counter {
+        position: absolute;
+        top: -3px;
+        right: -6px;
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: #3d0876;
+      }
+    }
   }
 
   &__logo {
