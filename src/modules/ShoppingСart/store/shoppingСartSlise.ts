@@ -12,10 +12,13 @@ export const shoppingСartSlise = createSlice({
     addProductInBacket: (state, action) => {
       state.items.push(action.payload);
     },
+    deleteProduct: (state, action) => {
+      state.items = state.items.filter((item) => item.id !== action.payload);
+    },
   },
 });
 
-export const { addProductInBacket } = shoppingСartSlise.actions;
+export const { addProductInBacket, deleteProduct } = shoppingСartSlise.actions;
 
 export const getShoppingСartItems = (state: any) => state.shoppingСart.items;
 

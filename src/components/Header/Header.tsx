@@ -5,6 +5,7 @@ import user from 'assets/icons/userAvatar.svg';
 import basket from 'assets/icons/shoppingCart.svg';
 import './header.scss';
 import { Link } from 'react-router-dom';
+import BaseButton from 'UI/BaseButton/BaseButton';
 
 const Header = () => {
   return (
@@ -24,6 +25,8 @@ const Header = () => {
         <Link to={'/basket'}>
           <img src={basket} alt="@" />
         </Link>
+
+        <BaseButton>Place an order</BaseButton>
       </div>
     </header>
   );

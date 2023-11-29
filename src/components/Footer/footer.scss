@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f1f5;
+  height: 100px;
+  margin-top: 150px;
+  border-top: 1px solid rgba(0, 0, 0, 0.37);
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    img {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__info {
+    p {
+      font-size: 16px;
+    }
+  }
+}

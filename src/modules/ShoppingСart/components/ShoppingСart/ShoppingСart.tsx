@@ -41,7 +41,7 @@ const ShoppingСart = () => {
                 })}
             </tbody>
           </table>
-          <Order />
+          <Order total={totalPrice} />
         </div>
       )}
 

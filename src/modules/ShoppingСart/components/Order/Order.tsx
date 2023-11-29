@@ -2,8 +2,12 @@ import React from 'react';
 
 import './order.scss';
 
-const Order = () => {
-  return <div>hi</div>;
+interface IProps {
+  total: number;
+}
+
+const Order = ({ total }: IProps) => {
+  return <div>{total}</div>;
 };
 
 export default Order;
