@@ -1,0 +1,22 @@
+.order {
+  background-color: #fbfbfb;
+  height: 48px;
+
+  td {
+    &:first-child {
+      border-right: 1px solid rgba(128, 128, 128, 0.17);
+    }
+  }
+
+  p {
+    margin-right: 58px;
+    text-align: end;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  h4 {
+    text-align: center;
+    margin-right: 42px;
+  }
+}

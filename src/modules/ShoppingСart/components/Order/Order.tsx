@@ -7,7 +7,17 @@ interface IProps {
 }
 
 const Order = ({ total }: IProps) => {
-  return <div>{total}</div>;
+  return (
+    <tr className="order">
+      <td>
+        <p>Total:</p>
+      </td>
+
+      <td>
+        <h4>{total} ₽</h4>
+      </td>
+    </tr>
+  );
 };
 
 export default Order;

@@ -3,11 +3,10 @@
 
   &__basket {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     table {
       border-spacing: 0 11px;
-      width: 782px;
 
       thead {
         text-align: left;

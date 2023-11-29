@@ -40,9 +40,9 @@ const ShoppingСart = () => {
                     />
                   );
                 })}
+              <Order total={totalPrice} />
             </tbody>
           </table>
-          <Order total={totalPrice} />
         </div>
       )}
 
