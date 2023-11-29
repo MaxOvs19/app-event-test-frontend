@@ -10,4 +10,38 @@
     border-radius: 8px;
     border: 1px solid rgba(128, 128, 128, 0.496);
   }
+
+  @media (max-width: 1200px) {
+    &__advertising {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__advertising {
+      width: 88%;
+      margin: 0 auto;
+    }
+
+    justify-content: center;
+  }
+
+  @media (max-width: 770px) {
+    justify-content: center;
+    gap: 20.5px;
+
+    &__advertising {
+      width: 97%;
+    }
+  }
+
+  @media (max-width: 745px) {
+    justify-content: center;
+    gap: 15.5px;
+
+    &__advertising {
+      display: none;
+    }
+  }
 }

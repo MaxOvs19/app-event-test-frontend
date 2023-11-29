@@ -18,3 +18,10 @@
 body {
   background-color: #f3f1f5;
 }
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+    overflow: hidden;
+  }
+}

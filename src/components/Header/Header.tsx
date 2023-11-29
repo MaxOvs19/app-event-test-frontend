@@ -9,12 +9,14 @@ import { IProduct } from 'interfaces/IProduct.interface';
 import logo from 'assets/images/logo.png';
 import user from 'assets/icons/userAvatar.svg';
 import basketIcon from 'assets/icons/shoppingCart.svg';
+import burgerMenu from 'assets/icons/burger-menu.svg';
 
 import './header.scss';
 
 const Header = () => {
   const basket: Array<IProduct> = useSelector(getShoppingСartItems);
   const [basketArr, setBasketArr] = useState(basket);
+  const [menuState, setMenuState] = useState(false);
 
   useEffect(() => {
     setBasketArr(basket);
@@ -24,12 +26,21 @@ const Header = () => {
     <header className="header">
       <img src={logo} alt="@" className="header__logo" />
 
-      <nav className="header__nav">
+      <nav className={menuState ? 'header__nav menu-active' : 'header__nav'}>
         <Link to={'/'}>Catalog</Link>
 
         <Link to={'/'}>Blogs</Link>
 
         <Link to={'/'}>About Us</Link>
+
+        <p
+          className="menu-close"
+          onClick={() => {
+            setMenuState(false);
+          }}
+        >
+          X
+        </p>
       </nav>
 
       <div className="header-profile">
@@ -42,6 +53,15 @@ const Header = () => {
             ''
           )}
         </Link>
+
+        <img
+          src={burgerMenu}
+          alt="@"
+          className="header-profile__menu"
+          onClick={() => {
+            setMenuState(true);
+          }}
+        />
       </div>
     </header>
   );
