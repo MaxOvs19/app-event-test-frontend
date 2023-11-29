@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -15,6 +15,7 @@ import './productCard.scss';
 
 const ProductCard = (item: IProduct) => {
   const [buttonText, setButtonText] = useState<string>('Add to Basket');
+  const [buttonStatus, setButtonStatus] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -26,7 +27,6 @@ const ProductCard = (item: IProduct) => {
     basket.forEach((item: IProduct, index: number) => {
       if (item.id === elem.id) {
         coincidence = true;
-
         navigate('/basket');
       }
     });
@@ -38,9 +38,19 @@ const ProductCard = (item: IProduct) => {
         icon: 'success',
         timer: 2000,
       });
+      setButtonStatus(true);
       setButtonText('Checkout');
     }
   }
+
+  useEffect(() => {
+    basket.find((elem) => {
+      if (elem.id === item.id) {
+        setButtonStatus(true);
+        setButtonText('Checkout');
+      }
+    });
+  }, []);
 
   return (
     <div className="product-card" key={item.id}>
@@ -49,7 +59,7 @@ const ProductCard = (item: IProduct) => {
         <h2>{item.name}</h2>
         <p>{item.price.toFixed(2)} ₽</p>
         <BaseButton
-          styles="product-card__desc-button"
+          styles={buttonStatus ? 'product-card__desc-button selected' : 'product-card__desc-button'}
           click={() => {
             addProduct(item);
           }}
