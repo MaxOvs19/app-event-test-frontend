@@ -1,34 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 
 import { IProductArray } from 'interfaces/IProductArray.interface';
-import { getProduct } from 'modules/Catalog/api/fetchGetProducts';
-import { loadCatalog } from 'modules/Catalog/store/catalogSlise';
 import ProductCard from '../../../../components/ProductCard/ProductCard';
 
 import advertising from 'assets/images/advertising.png';
 
 import './catalog.scss';
 
-const Catalog = () => {
-  const [dataCatalog, setDataCatalog] = useState<IProductArray>();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    getProduct().then((res) => {
-      setDataCatalog(res);
-    });
-  }, []);
-
-  useEffect(() => {
-    dispatch(loadCatalog(dataCatalog?.items));
-  }, [dataCatalog]);
-
+const Catalog = (catalog: IProductArray) => {
   return (
     <div className="catalog">
       <img src={advertising} alt="@" className="catalog__advertising" />
-      {dataCatalog?.items.length
-        ? dataCatalog.items.map((item) => {
+      {catalog
+        ? catalog.items.map((item) => {
             return (
               <ProductCard
                 id={item.id}
