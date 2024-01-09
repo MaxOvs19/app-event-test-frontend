@@ -12,7 +12,7 @@ export const shoppingСartSlise = createSlice({
   reducers: {
     loadBacket: (state) => {
       const storage: Array<IProduct> = JSON.parse(localStorage.getItem('basket')!);
-      if (storage.length > 0) {
+      if (storage?.length > 0) {
         console.log('storageSlice', storage);
         state.items = storage;
       }
